@@ -167,7 +167,7 @@ nopFw <- sort(list.files(path_to_trimmed_reads, pattern = "R1", full.names = TRU
 nopRv <- sort(list.files(path_to_trimmed_reads, pattern = "R2", full.names = TRUE))
 ```
 
-5.
+#### 5.
 ```{r}
 path_to_filtered_reads <- here::here("outputs", "dada2", "filtered")
 if (!dir.exists(path_to_filtered_reads)) dir.create(path_to_filtered_reads, recursive = TRUE)
@@ -182,7 +182,7 @@ filtRs <- file.path(path_to_filtered_reads, basename(fnRs))
 names(filtFs) <- sample_names
 names(filtRs) <- sample_names
 ```
-5
+#### 5
 ```{r}
 (out <- dada2::filterAndTrim(
   fwd = nopFw,
@@ -196,7 +196,7 @@ names(filtRs) <- sample_names
   truncQ = 2
 ))
 ```
-6.1
+#### 6.1
 ```{r}
 errF <- dada2::learnErrors(filtFs,
                            randomize = TRUE,
@@ -294,17 +294,17 @@ saveRDS(object = taxonomy,
         file = file.path(export_folder, "taxonomy.rds"))
 ```
 
-#### Résultat Seqtab_nochim
-```{r}
-ResultatSeqtab_nochim <- readRDS("outputs/dada2/asv_table/seqtab_nochim.rds")
-ResultatSeqtab_nochim
-```
+#### Résultat Seqtab_nochim (PREND BCP DE PLACE ET PAS INTERESSANT)
+######```{r}
+######ResultatSeqtab_nochim <- readRDS("outputs/dada2/asv_table/seqtab_nochim.rds")
+######ResultatSeqtab_nochim
+######```
 
-#### Résultat Taxonomietsv
-```{r}
-ResultatTaxo <- readRDS("outputs/dada2/asv_table/taxonomy.rds")
-ResultatTaxo
-```
+#### Résultat Taxonomietsv (long et pas interessant)
+######```{r}
+######ResultatTaxo <- readRDS("outputs/dada2/asv_table/taxonomy.rds")
+######ResultatTaxo
+######```
 
 
 ### 11.2
@@ -367,7 +367,9 @@ cat(paste0(">", names(asv_seq), "\n", asv_seq),
 #### Résultat asv.fasta
 ```{r}
 library(Biostrings)
+```
 
+```{r}
 path_asv.fasta <- "outputs/dada2/asv_table/asv.fasta"
 Resultatasvfasta <- readDNAStringSet(path_asv.fasta)
 Resultatasvfasta
