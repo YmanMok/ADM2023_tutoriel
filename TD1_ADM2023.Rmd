@@ -366,6 +366,8 @@ cat(paste0(">", names(asv_seq), "\n", asv_seq),
 
 #### Résultat asv.fasta
 ```{r}
+library(Biostrings)
+
 path_asv.fasta <- "outputs/dada2/asv_table/asv.fasta"
 Resultatasvfasta <- readDNAStringSet(path_asv.fasta)
 Resultatasvfasta
