@@ -399,7 +399,7 @@ df_export(log_table, new_rn = "sample") |>
               row.names = FALSE)
 ```
 
-#### Résultat log_table.tsv
+#### Résultat log_table.tsv 
 ```{r}
 Resultatlogtabletsv <- read.delim("outputs/dada2/asv_table/log_table.tsv")
 Resultatlogtabletsv
